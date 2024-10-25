@@ -1,0 +1,67 @@
+#
+#       project: hello.py
+#        author: Emmett Kulkin <ekulkin2809002@woonsocketschools.com>
+#  date written: 10/21/2024
+#
+import random
+
+print("""Welcome to Kai Duke and Grimace
+The rules of the game are you only get 10 attemps. In those 10 attemps every digit you get right you get a Kai
+Every digit you get right but is in the wrong spot you get a Duke
+Every digit that isnt in the 3 digit number you get a Grimace""")
+loop = True
+choice1=str(random.randint(1,9))
+choice2=str(random.randint(1,9))
+choice3=str(random.randint(1,9))
+kai=0
+duke=0
+fanum=0
+answer = print(choice1,choice2,choice3)
+counter=0
+isPlaying = True
+while isPlaying is True:
+    question=input("Guess any three digit number you up to 999: ")
+    counter+=1
+    if question[0]==choice1:
+        print("You get a Kai")
+        kai+=1
+        counter += 1
+    elif question[0]==choice2 or question[0]==choice3:
+        print("You get a Duke")
+        duke+=1
+        counter += 1
+    else:
+        print("You get a fanum.")
+        fanum+=1
+        counter += 1
+
+    if question[1] == choice2:
+        print("You get a Kai")
+        kai += 1
+        counter += 1
+    elif question[1] == choice1 or question[1] == choice3:
+        print("You get a Duke")
+        duke += 1
+        counter += 1
+    else:
+        print("You get a fanum.")
+        fanum += 1
+        counter += 1
+
+    if question[2] == choice3:
+        print("You get a Kai")
+        kai += 1
+        counter += 1
+    elif question[2] == choice1 or question[2] == choice2:
+        print("You get a Duke")
+        duke += 1
+        counter += 1
+    else:
+        print("You get a fanum.")
+        fanum += 1
+        counter += 1
+    if answer == question:
+        print("You got it! What a smart cookie!")
+    again = input("Would you like to play again? : ")
+    if again == "No":
+        isPlaying = False
